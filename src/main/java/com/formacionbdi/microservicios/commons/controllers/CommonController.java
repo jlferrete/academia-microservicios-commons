@@ -61,7 +61,7 @@ public class CommonController<E, S extends CommonService<E>> {
 		return ResponseEntity.status(HttpStatus.CREATED).body(entityDb);
 	}
 	
-	@DeleteMapping("/id")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<?> eliminar(@PathVariable Long id){
 		service.deleteById(id);
 		return ResponseEntity.noContent().build();
